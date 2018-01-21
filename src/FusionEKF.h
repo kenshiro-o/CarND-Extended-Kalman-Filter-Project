@@ -9,7 +9,8 @@
 #include "kalman_filter.h"
 #include "tools.h"
 
-class FusionEKF {
+class FusionEKF
+{
 public:
   /**
   * Constructor.
@@ -40,6 +41,11 @@ private:
 
   // tool object used to compute Jacobian and RMSE
   Tools tools;
+
+  // Also store the noise since they are constant
+  float noiseAx;
+  float noiseAy;
+
   Eigen::MatrixXd R_laser_;
   Eigen::MatrixXd R_radar_;
   Eigen::MatrixXd H_laser_;
