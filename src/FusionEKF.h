@@ -42,9 +42,8 @@ private:
   // tool object used to compute Jacobian and RMSE
   Tools tools;
 
-  // Also store the noise since they are constant
-  float noiseAx;
-  float noiseAy;
+  // Also store the process covariance matrix
+  MatrixXd aAT_;
 
   Eigen::MatrixXd R_laser_;
   Eigen::MatrixXd R_radar_;
